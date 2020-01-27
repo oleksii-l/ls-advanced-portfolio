@@ -3,19 +3,19 @@ mixin icon(name, className)
   svg(class=className viewBox=icon.viewBox preserveAspectRatio="none")
     use(xlink:href=icon.url)
 
-mixin image(path, className)
-  img(src=require(`images/${path}`) class=className)
+mixin image(path, className, alt)
+  img(src=require(`images/${path}`) class=className alt=`${alt}`)
 
 mixin nav(modificatorClassName)
   nav.nav(class=modificatorClassName)
     ul.nav__list
         each val in ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться']
             li.nav__item
-                a.nav__url(href='#', data-scroll-to=index)=val
+                a.nav__link(href=`#`, data-scroll-to=index)=val
             
 mixin socials(modificatorClassName)
   ul.socials__list(class=modificatorClassName)
     each social, index in ['insta', 'vk', 'github']
       li.socials__item
-        a.socials__url(href='#')
+        a.socials__link(href='#')
           +icon(social, 'social__img')

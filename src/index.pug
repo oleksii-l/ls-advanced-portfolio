@@ -1,7 +1,7 @@
 include ./templates/mixins.pug
 
 <!DOCTYPE html>
-html(lang="en")
+html(lang="ru")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -9,13 +9,12 @@ html(lang="en")
     title Portfolio | main page
   body
     .wrapper
-      .wellcome-section
+      include ./templates/blocks/header.pug
+      main.wellcome-section
         .container
           section.wellcome
-            include ./templates/blocks/header.pug
             include ./templates/blocks/maincontent.pug
           include ./templates/blocks/aboutme.pug
-        .triangle
 
       section.service
           .container.service__container
@@ -48,12 +47,12 @@ html(lang="en")
             .works__left
               .slider
                 .slider__main
-                  +image('content/1.jpg', 'slider__pic')
+                  +image('content/1.jpg', 'slider__pic', 'слайдер')
                   .slider__preview
                     ul.previews
                       - for (var i = 2; i < 6; i++)
                         li.previews__item
-                          +image(`content/${i}.jpg`, 'previews__pic')
+                          +image(`content/${i}.jpg`, 'previews__pic', 'превью')
                 .slider__control
                   button.slider__button.slider__button--prev
                     +icon('arrow-down', 'slider__button-arrow')
@@ -72,8 +71,7 @@ html(lang="en")
                 a.iconed-link
                   +icon('link', 'iconed-link__icon')
                   .iconed-link__text Посмотреть сайт
-        .triangle
-      
+     
       .feedback-section
         section.feedbacks
           .container
@@ -109,7 +107,7 @@ html(lang="en")
                       .feedback__user
                         .user
                           .user__img-wrapper
-                            +image(`content/${feedback.picture}`, 'user__img')
+                            +image(`content/${feedback.picture}`, 'user__img', 'фото пользователя')
                           .user__details
                             .user__name #{feedback.name}
                             .user__job #{feedback.occupation}
