@@ -43,27 +43,27 @@ html(lang="ru")
       section.works
         .container.works__container
           h2.works__title Мои работы
-          .works__main
-            .works__left
-              .slider
-                .slider__main
-                  +image('content/1.jpg', 'slider__pic', 'слайдер')
-                  .slider__preview
-                    ul.previews
-                      - for (var i = 2; i < 6; i++)
-                        li.previews__item
+          .slider
+            .slider__visual
+              .slider__main
+                +image('content/1.jpg', 'slider__pic', 'слайдер')
+                .slider__preview
+                  ul.previews
+                    - for (var i = 2; i < 6; i++)
+                      li.previews__item
+                        button.previes__btn
                           +image(`content/${i}.jpg`, 'previews__pic', 'превью')
-                .slider__control
-                  button.slider__button.slider__button--prev
-                    +icon('arrow-down', 'slider__button-arrow')
-                  button.slider__button.slider__button--next
-                    +icon('arrow-down', 'slider__button-arrow')
-            .works__right  
+              .slider__control
+                button(type='button').slider__button.slider__button--prev
+                  +icon('arrow-down', 'slider__button-arrow')
+                button(type='button').slider__button.slider__button--next
+                  +icon('arrow-down', 'slider__button-arrow')
+            .slider__desc  
               .works__tags
-              - var tags = ['HTML', 'CSS', 'Javascript']
-                ul.tags
-                  each tag in tags
-                    li.tags__item #{tag}
+                - var tags = ['HTML', 'CSS', 'Javascript']
+                  ul.tags
+                    each tag in tags
+                      li.tags__item #{tag}
               .works__text
                 h3.title Сайт школы образования
                 .works__desc-text
@@ -81,54 +81,57 @@ html(lang="ru")
                 button.feedbacks__button.feedbacks__button--prev
                 button.feedbacks__button.feedbacks__button--next
             .feedbacks-slider
-            ul.feedbacks-slider__list
-              -
-                var feedbacks = [
-                    {
-                      "name": "Ковальчук Дмитрий",
-                      "occupation": "Основатель Loftschool",
-                      "feedback": "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!",
-                      "picture": "dmitry.jpg"
-                    },
-                    {
-                      "name": "Владимир Сабанцев",
-                      "occupation": "Преподаватель",
-                      "feedback": "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах",
-                      "picture": "vladimir.jpg"
-                    }
-                ]
+              ul.feedbacks-slider__list
+                -
+                  var feedbacks = [
+                      {
+                        "name": "Ковальчук Дмитрий",
+                        "occupation": "Основатель Loftschool",
+                        "feedback": "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!",
+                        "picture": "dmitry.jpg"
+                      },
+                      {
+                        "name": "Владимир Сабанцев",
+                        "occupation": "Преподаватель",
+                        "feedback": "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах",
+                        "picture": "vladimir.jpg"
+                      }
+                  ]
 
-              each feedback in feedbacks
-                li.feedbacks-slider__item
-                  .feedback
-                    +icon('quote', 'feedback__pic')
-                    .feedback__content
-                      .feedback__desc #{feedback.feedback}
-                      .feedback__user
-                        .user
-                          .user__img-wrapper
-                            +image(`content/${feedback.picture}`, 'user__img', 'фото пользователя')
-                          .user__details
-                            .user__name #{feedback.name}
-                            .user__job #{feedback.occupation}
+                each feedback in feedbacks
+                  li.feedbacks-slider__item
+                    .feedback
+                      +icon('quote', 'feedback__pic')
+                      .feedback__content
+                        p.feedback__desc #{feedback.feedback}
+                        .feedback__user
+                          .user
+                            .user__img-wrapper
+                              +image(`content/${feedback.picture}`, 'user__img', 'фото пользователя')
+                            .user__details
+                              .user__name #{feedback.name}
+                              .user__job #{feedback.occupation}
         section.contact
           .container
             h2.title.title__contact Связаться со мной
-            form.form
+            form(action='').form
               .form__row.form__row--first
                 .form__element
-                  +icon('user', 'form__pic')
                   label.form__label Введите ваше имя
-                    input(type='text').form__input
+                    .form__control
+                      +icon('user', 'form__pic')
+                      input(type='text').form__input
                 .form__element
-                  +icon('envelope', 'form__pic')
                   label.form__label Введите ваш email
-                    input(type='mail').form__input
+                    .form__control
+                      +icon('envelope', 'form__pic')
+                      input(type='email').form__input
               .form__row
                 .form__element
-                  +icon('quote', 'form__pic')
                   label.form__label Сообщение к письму
-                    textarea(rows='2').form__input
+                    .form__control
+                      +icon('quote', 'form__pic')
+                      textarea(rows='2').form__input
               button(type='submit').button.form__button отправить
       
       footer.footer
