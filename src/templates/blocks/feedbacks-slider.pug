@@ -1,0 +1,31 @@
+.feedbacks-slider
+  ul.feedbacks-slider__list
+    -
+      var feedbacks = [
+          {
+            "name": "Ковальчук Дмитрий",
+            "occupation": "Основатель Loftschool",
+            "feedback": "Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!",
+            "picture": "dmitry.jpg"
+          },
+          {
+            "name": "Владимир Сабанцев",
+            "occupation": "Преподаватель",
+            "feedback": "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах",
+            "picture": "vladimir.jpg"
+          }
+      ]
+
+    each feedback in feedbacks
+      li.feedbacks-slider__item
+        .feedback
+          +icon('quote', 'feedback__pic')
+          .feedback__content
+            p.feedback__desc #{feedback.feedback}
+            .feedback__user
+              .user
+                .user__img-wrapper
+                  +image(`content/${feedback.picture}`, 'user__img', 'фото пользователя')
+                .user__details
+                  .user__name #{feedback.name}
+                  .user__job #{feedback.occupation}

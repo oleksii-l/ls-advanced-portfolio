@@ -5,7 +5,7 @@
     margin-left: 300px;
 }
 
-.skills-row {
+.skills__block {
     display: flex;
     flex-direction: column;
     margin-top: 55px;
@@ -15,23 +15,46 @@
     }
 }
 
-.skills-row__list {
+.skills__block-list {
     display: flex;
     justify-content: space-between;
 }
 
-.skills-row__item {
+.skills__item {
     width: 145px;
     height: 145px;
     margin-right: 30px;
+    position: relative;
 
     &:last-child{
         margin-right: 0;
     }
 }
 
+  
 .skill {
+    width: 145px;
+    height: 145px;
+    fill: transparent;
     position: relative;
+
+    &__circle{
+        &--under{
+            stroke: #423d3c;
+            stroke-width: 3px;
+        }
+        &--above{
+            stroke-width: 13px;
+            stroke-dasharray: 421;
+            animation: animateSkill 100s linear infinite;
+            animation-play-state: paused;
+
+        }
+    }
+}
+
+.skill__shape {
+    height: 100%;
 }
 
 .skill__title {
