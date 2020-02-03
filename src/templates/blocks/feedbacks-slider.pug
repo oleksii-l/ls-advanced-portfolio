@@ -23,9 +23,8 @@
           .feedback__content
             p.feedback__desc #{feedback.feedback}
             .feedback__user
-              .user
-                .user__img-wrapper
-                  +image(`content/${feedback.picture}`, 'user__img', 'фото пользователя')
-                .user__details
-                  .user__name #{feedback.name}
-                  .user__job #{feedback.occupation}
+              .feedback__img-wrapper
+                +image(`content/${feedback.picture}`, 'user__img', 'фото пользователя')
+              .feedback__details
+                .feedback__name #{feedback.name}
+                .feedback__job #{feedback.occupation}
