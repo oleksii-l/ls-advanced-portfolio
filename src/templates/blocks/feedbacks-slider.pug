@@ -1,4 +1,11 @@
 .feedbacks-slider
+  .feedbacks-slider__header
+    h2.feedbacks-slider__title Что обо мне говорят
+    .feedbacks__control
+      button.feedbacks-slider__button.feedbacks-slider__button--prev
+        +icon('arrow-down', 'feedbacks-slider__button-arrow')
+      button.feedbacks-slider__button.feedbacks-slider__button--next
+        +icon('arrow-down', 'feedbacks-slider__button-arrow')
   ul.feedbacks-slider__list
     -
       var feedbacks = [
