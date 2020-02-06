@@ -24,6 +24,12 @@
 .slider__button-arrow {
     width: 11px;
     height: 11px;
+    fill: $white-color;
+}
+
+.previews {
+    height: 414px;
+    overflow: hidden;
 }
 
 .previews__item {
@@ -41,6 +47,14 @@
     height: 49px;
     width: 49px;
     background-color: $btn-color;
+
+    &--prev {
+        transform: rotate(90deg);
+    }
+
+    &--next {
+        transform: rotate(-90deg);
+    }
 }
 
 .slider {

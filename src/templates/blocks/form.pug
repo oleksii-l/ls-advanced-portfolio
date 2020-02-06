@@ -1,19 +1,22 @@
 form(action='').form
   .form__row.form__row--first
     .form__element
-      label.form__label Введите ваше имя
+      label.form__label
+        span.form__label-text Введите ваше имя
         .form__control
           +icon('user', 'form__pic')
           input(type='text').form__input
     .form__element
-      label.form__label Введите ваш email
+      label.form__label 
+        span.form__label-text Введите ваш email
         .form__control
           +icon('envelope', 'form__pic')
           input(type='email').form__input
   .form__row
     .form__element
-      label.form__label Сообщение к письму
+      label.form__label
+        span.form__label-text Сообщение к письму
         .form__control
           +icon('quote', 'form__pic')
-          textarea(rows='2').form__input
+          textarea(rows='2').form__input.form__input--textarea
   button(type='submit').button.form__button отправить
