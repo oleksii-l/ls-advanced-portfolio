@@ -25,9 +25,18 @@
     margin-right: 90px;
     border: 1px;
     border-style: none none solid none;
+    transition: .4s;
 
     &:last-child {
         margin-right: 0;
+    }
+
+    &:hover {
+        border-color: $blue-color;
+
+        .form__pic {
+            fill: $blue-color;
+        }
     }
 }
 

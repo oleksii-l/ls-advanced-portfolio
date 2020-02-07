@@ -9,8 +9,8 @@ mixin image(path, className, alt)
 mixin nav(modificatorClassName)
   nav.nav(class=modificatorClassName)
     ul.nav__list
-        each val in ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться']
-            li.nav__item
+        each val, ndx in ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться']
+            li(class='nav__item', class=ndx ===1  ? 'nav__item--active' : '')
                 a.nav__link(href=`#`, data-scroll-to=index)=val
             
 mixin socials(modificatorClassName)
