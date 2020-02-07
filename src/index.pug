@@ -1,7 +1,7 @@
-include ./mixins.pug
+include ./templates/mixins.pug
 
 <!DOCTYPE html>
-html(lang="en")
+html(lang="ru")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -9,7 +9,34 @@ html(lang="en")
     title Portfolio | main page
   body
     .wrapper
-      .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+      include ./templates/blocks/header.pug
+      main.wellcome-section
+        .container
+          section.wellcome
+            include ./templates/blocks/maincontent.pug
+          include ./templates/blocks/aboutme.pug
+
+      section.service
+          .container.service__container
+            .service__desc
+              h2.title Чем я могу быть полезен вам
+              p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+
+            include ./templates/blocks/skills.pug
+
+      section.works
+        .container.works__container
+          h2.works__title Мои работы
+          include ./templates/blocks/slider.pug
+     
+      .feedback-section
+        section.feedbacks
+          .container
+            include ./templates/blocks/feedbacks-slider.pug
+        section.contact
+          .container
+            h2.title.title__contact Связаться со мной
+            include ./templates/blocks/form.pug
+      
+      include ./templates/blocks/footer.pug
+  

@@ -1,0 +1,82 @@
+.form {
+    width: 50%;
+}
+
+.form__pic {
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+    fill: $bg-grey-color;
+}
+
+.form__row{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+
+    &--first {
+        margin-top: 85px;
+    }
+}
+
+.form__element {
+    display: flex;
+    align-items: flex-end;
+    margin-right: 90px;
+    border: 1px;
+    border-style: none none solid none;
+    transition: .4s;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &:hover {
+        border-color: $blue-color;
+
+        .form__pic {
+            fill: $blue-color;
+        }
+    }
+}
+
+.form__input {
+    border-style: none;
+    background-color: transparent;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.4em;;
+}
+
+.form__label {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__label-text {
+    padding-left: 35px;
+    margin-bottom: 10px;
+    opacity: .4;
+}
+
+.form__control {
+    display: flex;
+    border: 1px;
+    border-style: none;
+    padding: 5px;
+}
+
+.form__button {
+    font-size: 18px;
+    font-weight: 800;
+    padding: 30px 115px;
+    margin-top: 60px;
+    margin-bottom: 130px;
+    text-transform: uppercase;
+    color: $white-color;
+    border-top-right-radius: 5px;
+    border-end-start-radius: 5px;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    background-image: linear-gradient(to right, $gradient-start-color, $gradient-end-color);
+}

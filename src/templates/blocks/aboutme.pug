@@ -1,0 +1,28 @@
+section.about#aboutme
+    .container.about__container       
+        .about__desc
+            .user
+                .user__avatar
+                    +image('content/oleksii.jpg', 'user__img')
+                - 
+                    var items = [
+                            {"title": "Проживаю", "value": "Киев"},
+                            {"title": "Возраст", "value": "43 года"},
+                            {"title": "Родися", "value": "26 декабря 1976"}
+                        ]
+
+                table.user__desc
+                    each val in items
+                        tr.user__desc-item
+                            td.user__title=val.title
+                            td.user__value=val.value
+
+        .about__person
+              h4.about__prolog Привет, меня зовут
+              h2.about__title Алексей Лещенко
+              p.about__text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+              p.about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+
+
+
+        
